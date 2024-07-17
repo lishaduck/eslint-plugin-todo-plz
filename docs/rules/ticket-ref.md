@@ -2,11 +2,13 @@
 
 <!-- end auto-generated rule header -->
 
-Adding a `TODO` comment that will be addressed in the future should have a corresponding ticket (AKA issue) in the project backlog, so the team doesn't lose track of the pending work.
+Adding a `TODO` comment that will be addressed in the future should have a corresponding ticket (AKA issue) in the project backlog, so the team doesn't lose track of pending work.
 
 ## Options
 
-### `pattern`
+### pattern
+
+Type: `string`
 
 **This option is required**, and controls what the ticket pattern is to match against. Expects a regex string.
 
@@ -34,7 +36,9 @@ Examples of **correct** code for this rule when using the above options:
 // TODO (PROJ-123): Connect to the API
 ```
 
-### `terms`
+### terms
+
+Type: `Array<string>`
 
 _Optional._ Change what terms to require the ticket reference on. Defaults to: `["TODO"]`
 
@@ -68,18 +72,35 @@ Examples of **correct** code for this rule when using the above options:
 
 ## Advanced options
 
-### `commentPattern`
+### commentPattern
 
-_Optional._ Override the overall comment pattern that matches both term and ticket. When used, `term` and `pattern` options are ignored. Expects a regex string.
+Type: `RegExp | string`
 
-For example, let's say you expect a different comment pattern such as `TODO: [PROJ-123]`, you would configure this rule like:
+_Optional._ Override the overall comment pattern that matches both term and ticket. When used, `term` and `pattern` options are ignored. Expects a regex, or a string that can be passed to `new RegExp`.
 
-```json
+For example, let's say you expect a different comment pattern such as `TODO: [PROJ-123]`, you would configure this rule like this:
+
+```js
+export default [
+  {
+    rules: {
+      "todo-plz/ticket-ref": [
+        "error",
+        { commentPattern: /TODO:\s\[(PROJ-[0-9]+[,\s]*)+\]/ },
+      ],
+    },
+  },
+];
+```
+
+If you use a legacy JSON config, you would configure it like this:
+
+```js
 {
   "rules": {
     "todo-plz/ticket-ref": [
       "error",
-      { "commentPattern": "TODO:\\s\\[(PROJ-[0-9]+[,\\s]*)+\\]" }
+      { "commentPattern": /TODO:\s\[(PROJ-[0-9]+[,\s]*)+\]/ }
     ]
   }
 }
@@ -98,7 +119,9 @@ Examples of **correct** code for this rule when using the above options:
 // TODO: [PROJ-456] Connect to the API
 ```
 
-### `description`
+### description
+
+Type: `string`
 
 _Optional_. Override the error message portion that provides guidance on the expected ticket pattern. Defaults to: `Ticket pattern: <pattern>`
 
