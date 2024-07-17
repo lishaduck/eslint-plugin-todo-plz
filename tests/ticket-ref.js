@@ -101,21 +101,21 @@ ruleTester.run("ticket-ref", rule, {
   invalid: [
     {
       code: "// TODO: Connect to the API",
+      options: [options.jira],
       errors: [
         {
           message: messages.missingTodoTicket,
         },
       ],
-      options: [options.jira],
     },
     {
       code: "// TODO (a-1): Connect to the API",
+      options: [options.jira],
       errors: [
         {
           message: messages.missingTodoTicket,
         },
       ],
-      options: [options.jira],
     },
     {
       code: `/**
@@ -123,27 +123,27 @@ ruleTester.run("ticket-ref", rule, {
               * TODO: Connect to the API
               * @returns {string}
               */`,
+      options: [options.jira],
       errors: [
         {
           message: messages.missingTodoTicket,
         },
       ],
-      options: [options.jira],
     },
     {
       code: "// FIXME: Connect to the API",
-      errors: [{ message: messages.missingFixmeTicket }],
       options: [{ pattern, terms: ["FIXME"] }],
+      errors: [{ message: messages.missingFixmeTicket }],
     },
     {
       code: "// TODO (PROJ-123) Connect to the API",
-      errors: [{ message: messages.missingTodoTicketWithCommentPattern }],
       options: [{ commentPattern }],
+      errors: [{ message: messages.missingTodoTicketWithCommentPattern }],
     },
     {
       code: "// TODO (PROJ-123) Connect to the API",
-      errors: [{ message: messages.missingTicketWithDescription }],
       options: [{ description }],
+      errors: [{ message: messages.missingTicketWithDescription }],
     },
   ],
 });
