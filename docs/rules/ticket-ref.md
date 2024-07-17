@@ -8,7 +8,7 @@ Adding a `TODO` comment that will be addressed in the future should have a corre
 
 ### pattern
 
-Type: `string`
+Type: `RegExp | string`
 
 **This option is required**, and controls what the ticket pattern is to match against. Expects a regex string.
 

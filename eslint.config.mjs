@@ -24,7 +24,7 @@ export default [
     files: ["lib/**/*.js"],
     plugins: { "todo-plz": todoPlz },
     rules: {
-      "todo-plz/ticket-ref": ["error", { pattern: "#[0-9]+" }],
+      "todo-plz/ticket-ref": ["error", { pattern: /#[0-9]+/ }],
     },
   },
   {

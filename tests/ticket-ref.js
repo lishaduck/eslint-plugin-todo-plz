@@ -2,15 +2,15 @@ const RuleTester = require("eslint").RuleTester;
 const rule = require("../lib/rules/ticket-ref");
 const ruleTester = new RuleTester();
 
-const pattern = "PROJ-[0-9]+";
+const pattern = /PROJ-[0-9]+/;
 const commentPattern = /TODO:\s\[(PROJ-[0-9]+[,\s]*)+\]/;
 const description = "Example: TODO: [https://jira.net/browse/TASK-0000]";
 
 const messages = {
-  missingTodoTicket: `TODO comment doesn't reference a ticket number. Ticket pattern: ${pattern}`,
-  missingTodoTicketWithCommentPattern: `TODO comment doesn't reference a ticket number. Comment pattern: ${commentPattern}`,
+  missingTodoTicket: `TODO comment doesn't reference a ticket number. Ticket pattern: ${pattern.source}`,
+  missingTodoTicketWithCommentPattern: `TODO comment doesn't reference a ticket number. Comment pattern: ${commentPattern.source}`,
   missingTicketWithDescription: `TODO comment doesn't reference a ticket number. ${description}`,
-  missingFixmeTicket: `FIXME comment doesn't reference a ticket number. Ticket pattern: ${pattern}`,
+  missingFixmeTicket: `FIXME comment doesn't reference a ticket number. Ticket pattern: ${pattern.source}`,
 };
 
 const options = {
