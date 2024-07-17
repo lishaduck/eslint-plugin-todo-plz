@@ -23,12 +23,15 @@
     "lib"
   ],
   "scripts": {
+    "fix:eslint-docs": "eslint-doc-generator",
     "lint": "cd tests/integration && eslint .",
+    "lint:eslint-docs": "npm run fix:eslint-docs -- --check",
     "test": "mocha tests"
   },
   "devDependencies": {
     "@types/json-schema": "^7.0.15",
     "eslint": "^9.5.0",
+    "eslint-doc-generator": "^1.7.1",
     "mocha": "^10.4.0"
   },
   "peerDependencies": {

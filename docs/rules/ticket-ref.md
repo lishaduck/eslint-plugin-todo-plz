@@ -1,4 +1,6 @@
-# Require a ticket reference in the TODO comment (ticket-ref)
+# Require a ticket reference in the TODO comment (`todo-plz/ticket-ref`)
+
+<!-- end auto-generated rule header -->
 
 Adding a `TODO` comment that will be addressed in the future should have a corresponding ticket (AKA issue) in the project backlog, so the team doesn't lose track of the pending work.
 

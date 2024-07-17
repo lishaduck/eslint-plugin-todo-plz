@@ -40,7 +40,13 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-- [`ticket-ref`](docs/rules/ticket-ref.md)
+<!-- begin auto-generated rules list -->
+
+| Name                                   | Description                                    |
+| :------------------------------------- | :--------------------------------------------- |
+| [ticket-ref](docs/rules/ticket-ref.md) | Require a ticket reference in the TODO comment |
+
+<!-- end auto-generated rules list -->
 
 ## Inspiration
 
