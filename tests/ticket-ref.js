@@ -4,7 +4,7 @@ const ruleTester = new RuleTester();
 
 const pattern = "PROJ-[0-9]+";
 const commentPattern = "TODO:\\s\\[(PROJ-[0-9]+[,\\s]*)+\\]";
-const description = "Example: TODO: [http://jira.net/browse/TASK-0000]";
+const description = "Example: TODO: [https://jira.net/browse/TASK-0000]";
 
 const messages = {
   missingTodoTicket: `TODO comment doesn't reference a ticket number. Ticket pattern: ${pattern}`,

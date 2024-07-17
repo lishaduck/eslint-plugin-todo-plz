@@ -2,20 +2,20 @@
 
 Enforce consistent and maintainable TODO comments.
 
-![Screenshot](.github/assets/screenshot.png)
+![A screenshot of ESLint output in the editor, displaying "TODO comment doesn't reference a ticket number. Ticket pattern: PROJ-\[0-9\]+""](.github/assets/screenshot.png)
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+You'll first need to install [ESLint](https://eslint.org):
 
-```
-$ npm i eslint --save-dev
+```sh
+npm install --save-dev eslint
 ```
 
 Next, install `eslint-plugin-todo-plz`:
 
-```
-$ npm install eslint-plugin-todo-plz --save-dev
+```sh
+npm install --save-dev eslint-plugin-todo-plz
 ```
 
 ## Usage
@@ -44,4 +44,4 @@ Then configure the rules you want to use under the rules section.
 
 ## Inspiration
 
-- Shoutout [`expiring-todo-comments`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/expiring-todo-comments.md) for showing me how to build my first ESLint rule.
+- Shoutout to [`unicorn/expiring-todo-comments`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/expiring-todo-comments.md) for showing me how to build my first ESLint rule.
