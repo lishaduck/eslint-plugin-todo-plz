@@ -20,7 +20,7 @@ export default [
     rules: {
       "todo-plz/ticket-ref": [
         "error",
-        { commentPattern: "TODO:\\s\\[(PROJ-[0-9]+[,\\s]*)+\\]" },
+        { commentPattern: /TODO:\s\[(PROJ-[0-9]+[,\s]*)+\]/ },
       ],
     },
   },

@@ -3,7 +3,7 @@ const rule = require("../lib/rules/ticket-ref");
 const ruleTester = new RuleTester();
 
 const pattern = "PROJ-[0-9]+";
-const commentPattern = "TODO:\\s\\[(PROJ-[0-9]+[,\\s]*)+\\]";
+const commentPattern = /TODO:\s\[(PROJ-[0-9]+[,\s]*)+\]/;
 const description = "Example: TODO: [https://jira.net/browse/TASK-0000]";
 
 const messages = {
